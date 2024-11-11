@@ -1,4 +1,5 @@
 - [Contact-Management-Application](#contact-management-application)
+- [Requirements](#requirements)
 - [Task Details](#task-details)
   - [Create a Struct for Contacts:](#create-a-struct-for-contacts)
   - [CRUD Operations:](#crud-operations)
@@ -12,6 +13,11 @@ This is a simple task that will help you practice/learn about :
 * structs
 * file management
 * string manipulations.
+# Requirements
+
+You will need Go installed if you haven't already. You can download it from the official [Go website.](https://go.dev/)
+
+You will also need a code editor or IDE such as [VsCode](https://code.visualstudio.com/).
 
 # Task Details
 
