@@ -4,6 +4,7 @@
   - [CRUD Operations:](#crud-operations)
   - [File Handling:](#file-handling)
   - [String Manipulations:](#string-manipulations)
+- [Bonus](#bonus)
 
  # Contact-Management-Application
 
@@ -11,8 +12,6 @@ This is a simple task that will help you practice/learn about :
 * structs
 * file management
 * string manipulations.
-  
-  (Practice and take about 2 hours or less for this task)
 
 # Task Details
 
@@ -30,3 +29,6 @@ This is a simple task that will help you practice/learn about :
 ## String Manipulations:
 * Format the output when displaying contacts (e.g., aligning the columns).
 * Validate and manipulate input strings (e.g., checking if email is valid).
+
+# Bonus
+* Implement a search function to find contacts by name or email.
