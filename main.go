@@ -12,37 +12,48 @@ func main() {
 	scanner := bufio.NewScanner(args)
 	count := 1
 	user := ""
-	for {
-		if count == 1 {
-			fmt.Println("Hello,Please Enter your name")
-			fmt.Scanf(user, 2)
-		}
-		for scanner.Scan() {
-			count++
-			// input:=scanner.Text()
-			option := 0
-			if count > 1 {
-				fmt.Println("Please choose one option \n 1. See Contacts \n 2. Search Contact \n 3. Enter New Contact \n 4. Delete Contact")
-				fmt.Scanf("%d", &option)
+	if count == 1 {
+		fmt.Println("Hello,Please Enter your name")
+		fmt.Scanf(user, 2)
+		count++
+	}
+	for scanner.Scan() {
+		option := 0
+		for count > 1 {
+			fmt.Print("Please choose one option \n 1. See Contacts \n 2. Search Contact \n 3. Enter New Contact \n 4. Delete Contact \n 5. Exit\n\n")
+			fmt.Scanf("%d", &option)
 
-				if option == 3 {
-					done := pkg.SaveContacts()
-					if !done {
-						fmt.Println("An error occured Please try again later.")
-					} else {
-						fmt.Println("Success")
-					}
-					break
+			if option == 3 {
+				done := pkg.SaveContacts()
+				if !done {
+					fmt.Println("An error occured Please try again later.")
+				} else {
+					fmt.Print("Success \n\n")
 				}
-				if option == 1 {
-					done := pkg.SeeContacts()
-					if !done {
-						fmt.Println("An error occured Please try again later.")
-					}
-					break
+				count = 2
+			}
+			if option == 1 {
+				done := pkg.SeeContacts()
+				if !done {
+					fmt.Println("An error occured Please try again later.")
+				} else {
+					fmt.Print("Success \n\n")
+				}
+				count = 2
+			}
+			if option == 4 {
+				done := pkg.DeleteContact()
+				if !done {
+					fmt.Print("An error occured Please try again later.\n\n")
+				}else{
+					fmt.Print("Success \n\n")
+
 				}
 			}
-			break
+			if option == 5 {
+				fmt.Println("Have a good day ,come again next time:)")
+				return
+			}
 		}
 	}
 }

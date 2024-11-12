@@ -19,8 +19,27 @@ func SeeContacts() bool {
 		fmt.Println(err)
 		return false
 	}
+	// maxName:=0
+	// maxEmail:=0
+	// maxPhone:=0
+
+	// for _,v:= range contacts{
+	// 	if len(v.Name)>maxName{
+	// 		maxName=len(v.Name)
+	// 	}
+	// 	if len(v.Email)>maxEmail{
+	// 		maxEmail=len(v.Email)
+	// 	}
+	// 	if len(v.Phone)>maxPhone{
+	// 		maxName=len(v.Name)
+	// 	}
+	// }
+	if len(contacts)==0{
+		fmt.Print("Nothing to display...")
+		return true
+	}
 	for _, v := range contacts {
-		fmt.Println(v.Name+" "+"%d", v.Phone, " ", v.Email)
+		fmt.Printf("%s        +254%d          %s\n",v.Name,v.Phone, v.Email)
 	}
 	return true
 }

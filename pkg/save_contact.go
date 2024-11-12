@@ -17,7 +17,7 @@ func SaveContacts() bool {
 	fmt.Println("Enter Email")
 	fmt.Scanf("%s", &email)
 	fmt.Println("Enter Phone Numeber")
-	fmt.Scanf("%d", numbers)
+	fmt.Scanf("%d", &numbers)
 	var contacts database.Contacts
 	file, err := os.ReadFile("database/contacts.json")
 	if err != nil {
@@ -34,8 +34,7 @@ func SaveContacts() bool {
 	contacts.Phone = numbers
 
 	existing = append(existing, contacts)
-	fmt.Println(existing)
-	saved, err := json.Marshal(existing)
+	saved, err := json.MarshalIndent(existing,"","  ")
 	if err != nil {
 		fmt.Println(err)
 		return false
